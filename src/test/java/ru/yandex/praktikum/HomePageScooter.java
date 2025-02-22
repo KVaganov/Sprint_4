@@ -9,6 +9,7 @@ import static org.hamcrest.CoreMatchers.is;
 
 public class HomePageScooter {
     private final WebDriver driver;
+
     //Локатор кнопка Заказать в верхней части страницы
     private final By orderButtonHead = By.xpath(".//div[contains(@class, 'Header_Nav')]/button[text()='Заказать']");
     //Локатор кнопка Заказать в нижней части страницы
