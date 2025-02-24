@@ -3,15 +3,37 @@ package ru.yandex.praktikum;
 
 import org.junit.After;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import static ru.yandex.praktikum.HomePageScooter.*;
 
-public class QuestionAndAnswer {
 
+    @RunWith(Parameterized.class)
+    public class QuestionAndAnswer {
         private WebDriver driver;
+        private final String headingIndex;
+        private final String answerText;
+
+        public QuestionAndAnswer(String headingIndex, String answerText) {
+            this.headingIndex = headingIndex;
+            this.answerText = answerText;
+        }
+        @Parameterized.Parameters
+        public static Object[][] getInformationFAQ() {
+            return new Object[][]{
+                    {Question1, Answer1},
+                    {Question2, Answer2},
+                    {Question3, Answer3},
+                    {Question4, Answer4},
+                    {Question5, Answer5},
+                    {Question6, Answer6},
+                    {Question7, Answer7},
+                    {Question8, Answer8},
+            };
+        }
         @Test
         public void testQuestionAndAnswer() {
             // Создание драйвера для браузера Firefox
@@ -22,29 +44,8 @@ public class QuestionAndAnswer {
             // Скролл вниз до последнего вопроса
             homePage.scrollPageToEndOfList();
             //Кликнуть на вопрос 1 и получить ответ 1
-            homePage.clickQuestionButton1();
-                homePage.isCorrectAnswer(homePage.getAnswer1(), Answer1);
-            //Кликнуть на вопрос 2 и получить ответ 2
-            homePage.clickQuestionButton2();
-                homePage.isCorrectAnswer(homePage.getAnswer2(), Answer2);
-            //Кликнуть на вопрос 3 и получить ответ 3
-            homePage.clickQuestionButton3();
-                homePage.isCorrectAnswer(homePage.getAnswer3(), Answer3);
-            //Кликнуть на вопрос 4 и получить ответ 4
-            homePage.clickQuestionButton4();
-                homePage.isCorrectAnswer(homePage.getAnswer4(), Answer4);
-            //Кликнуть на вопрос 5 и получить ответ 5
-            homePage.clickQuestionButton5();
-                homePage.isCorrectAnswer(homePage.getAnswer5(), Answer5);
-            //Кликнуть на вопрос 6 и получить ответ 6
-            homePage.clickQuestionButton6();
-                homePage.isCorrectAnswer(homePage.getAnswer6(), Answer6);
-            //Кликнуть на вопрос 7 и получить ответ 7
-            homePage.clickQuestionButton7();
-                homePage.isCorrectAnswer(homePage.getAnswer7(), Answer7);
-            //Кликнуть на вопрос 8 и получить ответ 8
-            homePage.clickQuestionButton8();
-                homePage.isCorrectAnswer(homePage.getAnswer8(), Answer8);
+            homePage.clickQuestionButton(headingIndex);
+                homePage.isCorrectAnswer(homePage.getAnswer(headingIndex), answerText);
         }
     /// Закрытие браузера
     @After

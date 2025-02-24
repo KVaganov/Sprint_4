@@ -107,7 +107,7 @@ public class OrderPageScooter {
         return driver.findElement(buttonStatus).getText();
     }
     // Проверка, что текст корректно отображается в заголовке/кнопке
-    public void isCorrectOpenPage(String Text, String text){
-        MatcherAssert.assertThat(Text, is(text));
+    public void isCorrectOpenPage(String actualText, String expectedText){
+        MatcherAssert.assertThat(actualText, is(expectedText));
     }
 }
