@@ -7,7 +7,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static ru.yandex.praktikum.OrderPageScooter.*;
 
 public class TestButtonRents {
-
     private WebDriver driver;
     @Test
     public void testRentButtonHead() {

@@ -13,7 +13,6 @@ import static ru.yandex.praktikum.HomePageScooter.*;
 
     @RunWith(Parameterized.class)
     public class QuestionAndAnswer {
-
         private WebDriver driver;
         private final String headingIndex;
         private final String answerText;
