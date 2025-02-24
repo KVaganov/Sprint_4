@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import static org.hamcrest.CoreMatchers.is;
 public class OrderPageScooter {
+
     private final WebDriver driver;
 
     //Текст заголовка страницы "Для кого самокат"

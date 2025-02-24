@@ -41,6 +41,7 @@ public class TestRentFull {
     }
     @Test
     public void rentFull() {
+
         // Создание драйвера для браузера FireFox
         driver = new FirefoxDriver();
         // Переход на страницу
