@@ -44,7 +44,7 @@ import static ru.yandex.praktikum.HomePageScooter.*;
             HomePageScooter homePage = new HomePageScooter(driver);
             // Скролл вниз до последнего вопроса
             homePage.scrollPageToEndOfList();
-            //Кликнуть на вопрос 1 и получить ответ 1
+            //Кликнуть на вопрос, получить ответ и проверить текст ответа
             homePage.clickQuestionButton(headingIndex);
                 homePage.isCorrectAnswer(homePage.getAnswer(headingIndex), answerText);
         }
